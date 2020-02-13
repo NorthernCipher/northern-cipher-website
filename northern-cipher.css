@@ -1,0 +1,27 @@
+h1 {
+    color: green;
+    font-family: monospace, monospace;
+}
+
+@media screen {
+    body {
+        background: #000;
+    }
+
+    p {
+        color: #66FF00;
+        font-family: monospace, monospace;
+        font-size: x-large;
+        word-break: break-all
+    }
+}
+
+@media print {
+    body {
+        background: #FFFFFF;
+    }
+
+    p {
+        color: black;
+    }
+}
