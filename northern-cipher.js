@@ -57,6 +57,11 @@ function setCharAt(str, index, chr) {
     return str.substr(0, index) + chr + str.substr(index + 1);
 }
 
+function addCharAt(str, index, chr) {
+    if (index > str.length - 1) return str;
+    return str.substr(0, index + 1) + chr + str.substr(index + 1);
+}
+
 async function alterText() {
     let alterIndex = Math.round(text.length * Math.random());
     let current = text[alterIndex];
@@ -84,6 +89,7 @@ async function alterText() {
         } else if (current == 'P') {
             text = setCharAt(text, alterIndex, 'f');
             text = setCharAt(text, alterIndex + 1, '');
+            text = addCharAt(text, alterIndex + 3, '0');
         }
     }
     updateText();

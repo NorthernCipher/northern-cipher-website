@@ -12,7 +12,9 @@ h1 {
         color: #66FF00;
         font-family: monospace, monospace;
         font-size: x-large;
-        word-break: break-all
+        word-break: break-all;
+        margin-top: 0em;
+        margin-bottom: 0em;
     }
 }
 
