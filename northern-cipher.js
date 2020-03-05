@@ -12,7 +12,7 @@ var outputDone = false;
 var text = "";
 
 async function output() {
-    for (let i = 0; i < 4096; i++) {
+    for (let i = 0; i < 5120; i++) {
         if (i == titleIndex) {
             insertTitle = true;
         } else if (insertTitle) {
@@ -22,7 +22,7 @@ async function output() {
         }
     }
     outputDone = true;
-    setInterval(alterText, 16);
+    setInterval(alterText, 14);
 }
 
 async function addTitle() {

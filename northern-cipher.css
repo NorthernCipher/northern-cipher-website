@@ -10,11 +10,13 @@ h1 {
 
     p {
         color: #66FF00;
-        font-family: monospace, monospace;
+        font-family: monospace;
         font-size: x-large;
         word-break: break-all;
         margin-top: 0em;
         margin-bottom: 0em;
+        height: 99vh;
+        overflow: hidden;
     }
 }
 
