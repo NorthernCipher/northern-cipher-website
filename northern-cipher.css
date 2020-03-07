@@ -6,17 +6,25 @@ h1 {
 @media screen {
     body {
         background: #000;
+        margin: 0em;
+        padding: 0em;
     }
 
-    p {
+    div {
         color: #66FF00;
         font-family: monospace;
         font-size: x-large;
         word-break: break-all;
         margin-top: 0em;
         margin-bottom: 0em;
+        padding: 0em;
         height: 99vh;
         overflow: hidden;
+    }
+
+    div p {
+        margin: 0em;
+        padding: 0em;
     }
 }
 

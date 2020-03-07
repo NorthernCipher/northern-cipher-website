@@ -10,9 +10,11 @@ var insertTitle = false;
 var hasInsertedTitle = false;
 var outputDone = false;
 var text = "";
+var fullHeight = undefined;
 
 async function output() {
-    for (let i = 0; i < 6144; i++) {
+    let i = 0;
+    while(!isScreenFull()) {
         if (i == titleIndex) {
             insertTitle = true;
         } else if (insertTitle) {
@@ -20,6 +22,7 @@ async function output() {
         } else {
             await addDigit();;
         }
+        i += 1;
     }
     outputDone = true;
     setInterval(alterText, 14);
@@ -93,6 +96,26 @@ async function alterText() {
         }
     }
     updateText();
+}
+
+function isScreenFull() {
+    // There are two options for div height:
+    //   clientHeight includes padding.
+    //   offsetHeight includes padding, scrollBar and borders.
+    let clientHeight = document.getElementById("digital").clientHeight;
+    // Fill till we meet the window height
+    if (clientHeight <= window.innerHeight) {
+        return false;
+    // Capture current height and continue filling.
+    } else if (fullHeight == undefined) {
+        fullHeight = clientHeight;
+        return false;
+    // Fill one line past the window height.
+    } else if(clientHeight <= fullHeight) {
+        return false;
+    }
+    // All done.
+    return true;
 }
 
 function updateText() {
